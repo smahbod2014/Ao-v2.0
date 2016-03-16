@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{77C53BCD-A7D7-49C5-A20F-B4F7235BB4C6}</ProjectGuid>
+    <RootNamespace>Aov20</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)\Dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)\Dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Dependencies\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\include\freetype;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;freetype-gl-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\include\freetype;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;freetype-gl-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Audio\Music.cpp" />
+    <ClCompile Include="src\Audio\Sound.cpp" />
+    <ClCompile Include="src\Graphics\BatchRenderer2D.cpp" />
+    <ClCompile Include="src\Graphics\Camera.cpp" />
+    <ClCompile Include="src\Graphics\Font.cpp" />
+    <ClCompile Include="src\Graphics\Group.cpp" />
+    <ClCompile Include="src\Graphics\Renderable2D.cpp" />
+    <ClCompile Include="src\Graphics\Renderer2D.cpp" />
+    <ClCompile Include="src\Graphics\Shader.cpp" />
+    <ClCompile Include="src\Graphics\ShaderFactory.cpp" />
+    <ClCompile Include="src\Graphics\Sprite.cpp" />
+    <ClCompile Include="src\Graphics\Window.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="src\Managers\FileReader.cpp" />
+    <ClCompile Include="src\Managers\FontManager.cpp" />
+    <ClCompile Include="src\Managers\Input.cpp" />
+    <ClCompile Include="src\Managers\PicoPNG.cpp" />
+    <ClCompile Include="src\Managers\SoundManager.cpp" />
+    <ClCompile Include="src\Managers\TextureManager.cpp" />
+    <ClCompile Include="src\Math\mat4.cpp" />
+    <ClCompile Include="src\Math\vec2.cpp" />
+    <ClCompile Include="src\Math\vec3.cpp" />
+    <ClCompile Include="src\Math\vec4.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Audio\Music.h" />
+    <ClInclude Include="src\Audio\Sound.h" />
+    <ClInclude Include="src\Graphics\BatchRenderer2D.h" />
+    <ClInclude Include="src\Graphics\Camera.h" />
+    <ClInclude Include="src\Graphics\Font.h" />
+    <ClInclude Include="src\Ao.h" />
+    <ClInclude Include="src\Graphics\FontFactory.h" />
+    <ClInclude Include="src\Graphics\Group.h" />
+    <ClInclude Include="src\Graphics\Renderable2D.h" />
+    <ClInclude Include="src\Graphics\Renderer2D.h" />
+    <ClInclude Include="src\Graphics\Shader.h" />
+    <ClInclude Include="src\Graphics\ShaderFactory.h" />
+    <ClInclude Include="src\Graphics\Sprite.h" />
+    <ClInclude Include="src\Graphics\Texture.h" />
+    <ClInclude Include="src\Graphics\Window.h" />
+    <ClInclude Include="src\Managers\AoManagers.h" />
+    <ClInclude Include="src\Managers\FileReader.h" />
+    <ClInclude Include="src\Managers\FontManager.h" />
+    <ClInclude Include="src\Managers\Input.h" />
+    <ClInclude Include="src\Managers\PicoPNG.h" />
+    <ClInclude Include="src\Managers\SoundManager.h" />
+    <ClInclude Include="src\Managers\TextureManager.h" />
+    <ClInclude Include="src\Managers\Timer.h" />
+    <ClInclude Include="src\Math\AoMath.h" />
+    <ClInclude Include="src\Math\mat4.h" />
+    <ClInclude Include="src\Math\MathUtils.h" />
+    <ClInclude Include="src\Math\vec2.h" />
+    <ClInclude Include="src\Math\vec3.h" />
+    <ClInclude Include="src\Math\vec4.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
