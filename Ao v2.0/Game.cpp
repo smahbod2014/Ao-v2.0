@@ -44,6 +44,8 @@ public:
 		m_Group->add(m_Player);
 		m_Group->add(m_Box);
 		m_Group->setOrigin(m_Player->getCenter());
+
+		//ao::FontManager::load("magnetob2", "Resources/Fonts/MAGNETOB.TTF", 35);
 	}
 
 	bool interpolating = false;
@@ -152,6 +154,7 @@ public:
 		m_BatchRenderer->setProjectionMatrix(m_Camera->getCombinedMatrix());
 		m_BatchRenderer->begin();
 		m_Player->submit(m_BatchRenderer);
+		m_BatchRenderer->drawString("AVAW", ao::vec3(100, 100, 0), *ao::FontManager::get("magnetob"), 0xffffffff);
 		//m_Group->submit(m_BatchRenderer);
 		m_BatchRenderer->end();
 		/*glBegin(GL_QUADS);

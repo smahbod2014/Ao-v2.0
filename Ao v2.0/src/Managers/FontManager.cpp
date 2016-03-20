@@ -8,11 +8,7 @@ namespace ao
 
 	void FontManager::load(const std::string& alias, const std::string& filepath, float size)
 	{
-		auto it = m_Cache.find(alias);
-		if (it != m_Cache.end())
-			return;
-
-		m_Cache[alias] = new Font(filepath, size);
+		add(alias, new Font(filepath, size));
 	}
 
 	void FontManager::add(const std::string& alias, Font* font)
@@ -66,7 +62,7 @@ namespace ao
 		}
 
 		m_Cache["magnetob"] = new Font(buff1, 35.0f, 65284);
-		m_Cache["arial"] = new Font(buff2, 35.0f, 773852);
+		//m_Cache["arial"] = new Font(buff2, 35.0f, 773852);
 
 		std::cout << "Instantiated default fonts" << std::endl;
 	}

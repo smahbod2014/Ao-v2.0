@@ -132,44 +132,6 @@ namespace ao
 		m_Shader->bind();
 	}
 
-	/*void BatchRenderer2D::submit(Renderable2D* renderable)
-	{
-		std::cout << "NOOOOO" << std::endl;
-		vec3 position; // renderable->getPosition3();
-		const vec2& size = renderable->getSize();
-		const unsigned int color = renderable->getColor();
-		const std::vector<vec2>& uvs = renderable->getUVs();
-		const GLuint textureID = renderable->getTextureID();
-
-		float samplerIndex = findSamplerIndex(textureID);
-
-		m_Buffer->position = *m_TransformationBack * position;
-		m_Buffer->uv = uvs[0];
-		m_Buffer->sampler = samplerIndex;
-		m_Buffer->color = color;
-		m_Buffer++;
-
-		m_Buffer->position = *m_TransformationBack * vec3(position.x + size.x, position.y, position.z);
-		m_Buffer->uv = uvs[1];
-		m_Buffer->sampler = samplerIndex;
-		m_Buffer->color = color;
-		m_Buffer++;
-
-		m_Buffer->position = *m_TransformationBack * vec3(position.x + size.x, position.y + size.y, position.z);
-		m_Buffer->uv = uvs[2];
-		m_Buffer->sampler = samplerIndex;
-		m_Buffer->color = color;
-		m_Buffer++;
-
-		m_Buffer->position = *m_TransformationBack * vec3(position.x, position.y + size.y, position.z);
-		m_Buffer->uv = uvs[3];
-		m_Buffer->sampler = samplerIndex;
-		m_Buffer->color = color;
-		m_Buffer++;
-
-		m_IndexCount += 6;
-	}*/
-
 	void BatchRenderer2D::submit(Renderable2D* renderable)
 	{
 		const vec2& size = renderable->getSize();
@@ -213,20 +175,88 @@ namespace ao
 		float x = position.x;
 		const vec2& scale = font.getScale();
 		
+#if 1
 		for (size_t i = 0; i < text.length(); i++)
 		{
 			const char& c = text[i];
-			texture_glyph_t* glyph = texture_font_get_glyph(font.getFont(), &c);
+			ftgl::texture_glyph_t* glyph = texture_font_get_glyph(font.getFont(), c);
 			if (glyph)
 			{
 				if (i > 0)
 				{
-					float kerning = texture_glyph_get_kerning(glyph, &c);
+					float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
+					x += kerning / scale.x;
 				}
+
+				float x0 = x + glyph->offset_x / scale.x;
+				float y0 = position.y + glyph->offset_y / scale.y;
+				float x1 = x0 + glyph->width / scale.x;
+				float y1 = y0 - glyph->height / scale.y;
+
+				float u0 = glyph->s0;
+				float v0 = glyph->t0;
+				float u1 = glyph->s1;
+				float v1 = glyph->t1;
+
+				m_Buffer->position = *m_TransformationBack * vec3(x0, y0, 0);
+				m_Buffer->uv = vec2(u0, v0);
+				m_Buffer->sampler = samplerIndex;
+				m_Buffer->color = color;
+				m_Buffer++;
+
+				m_Buffer->position = *m_TransformationBack * vec3(x0, y1, 0);
+				m_Buffer->uv = vec2(u0, v1);
+				m_Buffer->sampler = samplerIndex;
+				m_Buffer->color = color;
+				m_Buffer++;
+
+				m_Buffer->position = *m_TransformationBack * vec3(x1, y1, 0);
+				m_Buffer->uv = vec2(u1, v1);
+				m_Buffer->sampler = samplerIndex;
+				m_Buffer->color = color;
+				m_Buffer++;
+
+				m_Buffer->position = *m_TransformationBack * vec3(x1, y0, 0);
+				m_Buffer->uv = vec2(u1, v0);
+				m_Buffer->sampler = samplerIndex;
+				m_Buffer->color = color;
+				m_Buffer++;
+
+				m_IndexCount += 6;
+				x += glyph->advance_x / scale.x;
 			}
 		}
+#else
+		float y = position.y;
+
+		m_Buffer->position = *m_TransformationBack * vec3(x, y, 0);
+		m_Buffer->uv = vec2(0, 1);
+		m_Buffer->sampler = samplerIndex;
+		m_Buffer->color = color;
+		m_Buffer++;
+
+		m_Buffer->position = *m_TransformationBack * vec3(x + 400, y, 0);
+		m_Buffer->uv = vec2(1, 1);
+		m_Buffer->sampler = samplerIndex;
+		m_Buffer->color = color;
+		m_Buffer++;
+
+		m_Buffer->position = *m_TransformationBack * vec3(x + 400, y + 400, 0);
+		m_Buffer->uv = vec2(1, 0);
+		m_Buffer->sampler = samplerIndex;
+		m_Buffer->color = color;
+		m_Buffer++;
+
+		m_Buffer->position = *m_TransformationBack * vec3(x, y + 400, 0);
+		m_Buffer->uv = vec2(0, 0);
+		m_Buffer->sampler = samplerIndex;
+		m_Buffer->color = color;
+		m_Buffer++;
+
+		m_IndexCount += 6;
+#endif
 		/*
-		float samplerIndex =
+		float samplerIndex = findSamplerIndex(font.getID());
 
 		float x = position.x;
 		const vec2& scale = font.getScale();
@@ -234,12 +264,12 @@ namespace ao
 		for (size_t i = 0; i < text.length(); i++)
 		{
 		const char& c = text[i];
-		ftgl::texture_glyph_t* glyph = ftgl::texture_font_get_glyph(font.getFont(), c);
+		ftgl::texture_glyph_t* glyph = ftgl::texture_font_get_glyph(font.getFont(), &c);
 		if (glyph)
 		{
 		if (i > 0)
 		{
-		float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
+		float kerning = texture_glyph_get_kerning(glyph, &text[i - 1]);
 		x += kerning / scale.x;
 		}
 
@@ -282,8 +312,8 @@ namespace ao
 		x += glyph->advance_x / scale.x;
 		}
 		}
+		
 		*/
-
 
 	}
 

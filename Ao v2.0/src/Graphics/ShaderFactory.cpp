@@ -54,6 +54,11 @@ void main()
 		int samplerIndex = int(outSampler - 0.5);
 		textureColor = outColor * texture(textures[samplerIndex], outTexCoord);
 	}
+
+	if (outSampler == 2.0)
+{
+	//textureColor.g = 1;
+}
 	
 	finalColor = textureColor;
 }

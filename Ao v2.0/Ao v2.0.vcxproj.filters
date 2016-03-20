@@ -84,6 +84,18 @@
     <ClCompile Include="src\Graphics\Group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\freetype-gl-old\platform.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\freetype-gl-old\texture-atlas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\freetype-gl-old\texture-font.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\freetype-gl-old\vector.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Graphics\Window.h">
@@ -171,6 +183,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Graphics\Group.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\freetype-gl-old\freetype-gl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\freetype-gl-old\opengl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\freetype-gl-old\platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\freetype-gl-old\texture-atlas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\freetype-gl-old\texture-font.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\freetype-gl-old\vec234.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\freetype-gl-old\vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

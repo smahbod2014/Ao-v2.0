@@ -56,7 +56,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;freetype-gl-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -74,13 +74,17 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;freetype-gl-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Audio\Music.cpp" />
     <ClCompile Include="src\Audio\Sound.cpp" />
+    <ClCompile Include="src\freetype-gl-old\platform.c" />
+    <ClCompile Include="src\freetype-gl-old\texture-atlas.c" />
+    <ClCompile Include="src\freetype-gl-old\texture-font.c" />
+    <ClCompile Include="src\freetype-gl-old\vector.c" />
     <ClCompile Include="src\Graphics\BatchRenderer2D.cpp" />
     <ClCompile Include="src\Graphics\Camera.cpp" />
     <ClCompile Include="src\Graphics\Font.cpp" />
@@ -106,6 +110,13 @@
   <ItemGroup>
     <ClInclude Include="src\Audio\Music.h" />
     <ClInclude Include="src\Audio\Sound.h" />
+    <ClInclude Include="src\freetype-gl-old\freetype-gl.h" />
+    <ClInclude Include="src\freetype-gl-old\opengl.h" />
+    <ClInclude Include="src\freetype-gl-old\platform.h" />
+    <ClInclude Include="src\freetype-gl-old\texture-atlas.h" />
+    <ClInclude Include="src\freetype-gl-old\texture-font.h" />
+    <ClInclude Include="src\freetype-gl-old\vec234.h" />
+    <ClInclude Include="src\freetype-gl-old\vector.h" />
     <ClInclude Include="src\Graphics\BatchRenderer2D.h" />
     <ClInclude Include="src\Graphics\Camera.h" />
     <ClInclude Include="src\Graphics\Font.h" />

@@ -2,7 +2,8 @@
 
 #include <GL/glew.h>
 #include <vector>
-#include <freetype-gl/freetype-gl.h>
+//#include <freetype-gl/freetype-gl.h>
+#include "../freetype-gl-old/freetype-gl.h"
 
 #include "Renderer2D.h"
 #include "Renderable2D.h"
