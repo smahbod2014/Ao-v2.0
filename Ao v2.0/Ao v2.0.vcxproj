@@ -10,19 +10,85 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Ao\Audio\Music.cpp" />
+    <ClCompile Include="Ao\Audio\Sound.cpp" />
+    <ClCompile Include="Ao\External\freetype-gl-old\platform.c" />
+    <ClCompile Include="Ao\External\freetype-gl-old\texture-atlas.c" />
+    <ClCompile Include="Ao\External\freetype-gl-old\texture-font.c" />
+    <ClCompile Include="Ao\External\freetype-gl-old\vector.c" />
+    <ClCompile Include="Ao\Graphics\BatchRenderer2D.cpp" />
+    <ClCompile Include="Ao\Graphics\Camera.cpp" />
+    <ClCompile Include="Ao\Graphics\Font.cpp" />
+    <ClCompile Include="Ao\Graphics\Group.cpp" />
+    <ClCompile Include="Ao\Graphics\Renderable2D.cpp" />
+    <ClCompile Include="Ao\Graphics\Renderer2D.cpp" />
+    <ClCompile Include="Ao\Graphics\Shader.cpp" />
+    <ClCompile Include="Ao\Graphics\ShaderFactory.cpp" />
+    <ClCompile Include="Ao\Graphics\Sprite.cpp" />
+    <ClCompile Include="Ao\Graphics\Window.cpp" />
+    <ClCompile Include="Ao\Managers\FileReader.cpp" />
+    <ClCompile Include="Ao\Managers\FontManager.cpp" />
+    <ClCompile Include="Ao\Managers\Input.cpp" />
+    <ClCompile Include="Ao\Managers\PicoPNG.cpp" />
+    <ClCompile Include="Ao\Managers\SoundManager.cpp" />
+    <ClCompile Include="Ao\Managers\TextureManager.cpp" />
+    <ClCompile Include="Ao\Math\mat4.cpp" />
+    <ClCompile Include="Ao\Math\vec2.cpp" />
+    <ClCompile Include="Ao\Math\vec3.cpp" />
+    <ClCompile Include="Ao\Math\vec4.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ao\Ao.h" />
+    <ClInclude Include="Ao\Audio\Music.h" />
+    <ClInclude Include="Ao\Audio\Sound.h" />
+    <ClInclude Include="Ao\External\freetype-gl-old\freetype-gl.h" />
+    <ClInclude Include="Ao\External\freetype-gl-old\opengl.h" />
+    <ClInclude Include="Ao\External\freetype-gl-old\platform.h" />
+    <ClInclude Include="Ao\External\freetype-gl-old\texture-atlas.h" />
+    <ClInclude Include="Ao\External\freetype-gl-old\texture-font.h" />
+    <ClInclude Include="Ao\External\freetype-gl-old\vec234.h" />
+    <ClInclude Include="Ao\External\freetype-gl-old\vector.h" />
+    <ClInclude Include="Ao\Graphics\BatchRenderer2D.h" />
+    <ClInclude Include="Ao\Graphics\Camera.h" />
+    <ClInclude Include="Ao\Graphics\Font.h" />
+    <ClInclude Include="Ao\Graphics\FontFactory.h" />
+    <ClInclude Include="Ao\Graphics\Group.h" />
+    <ClInclude Include="Ao\Graphics\Renderable2D.h" />
+    <ClInclude Include="Ao\Graphics\Renderer2D.h" />
+    <ClInclude Include="Ao\Graphics\Shader.h" />
+    <ClInclude Include="Ao\Graphics\ShaderFactory.h" />
+    <ClInclude Include="Ao\Graphics\Sprite.h" />
+    <ClInclude Include="Ao\Graphics\Texture.h" />
+    <ClInclude Include="Ao\Graphics\Window.h" />
+    <ClInclude Include="Ao\Managers\AoManagers.h" />
+    <ClInclude Include="Ao\Managers\FileReader.h" />
+    <ClInclude Include="Ao\Managers\FontManager.h" />
+    <ClInclude Include="Ao\Managers\Input.h" />
+    <ClInclude Include="Ao\Managers\PicoPNG.h" />
+    <ClInclude Include="Ao\Managers\SoundManager.h" />
+    <ClInclude Include="Ao\Managers\TextureManager.h" />
+    <ClInclude Include="Ao\Managers\Timer.h" />
+    <ClInclude Include="Ao\Math\AoMath.h" />
+    <ClInclude Include="Ao\Math\mat4.h" />
+    <ClInclude Include="Ao\Math\MathUtils.h" />
+    <ClInclude Include="Ao\Math\vec2.h" />
+    <ClInclude Include="Ao\Math\vec3.h" />
+    <ClInclude Include="Ao\Math\vec4.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{77C53BCD-A7D7-49C5-A20F-B4F7235BB4C6}</ProjectGuid>
     <RootNamespace>Aov20</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -61,6 +127,9 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
+    <Lib>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -79,74 +148,10 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
+    <Lib>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32s.lib;freetype-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="src\Audio\Music.cpp" />
-    <ClCompile Include="src\Audio\Sound.cpp" />
-    <ClCompile Include="src\External\freetype-gl-old\platform.c" />
-    <ClCompile Include="src\External\freetype-gl-old\texture-atlas.c" />
-    <ClCompile Include="src\External\freetype-gl-old\texture-font.c" />
-    <ClCompile Include="src\External\freetype-gl-old\vector.c" />
-    <ClCompile Include="src\Graphics\BatchRenderer2D.cpp" />
-    <ClCompile Include="src\Graphics\Camera.cpp" />
-    <ClCompile Include="src\Graphics\Font.cpp" />
-    <ClCompile Include="src\Graphics\Group.cpp" />
-    <ClCompile Include="src\Graphics\Renderable2D.cpp" />
-    <ClCompile Include="src\Graphics\Renderer2D.cpp" />
-    <ClCompile Include="src\Graphics\Shader.cpp" />
-    <ClCompile Include="src\Graphics\ShaderFactory.cpp" />
-    <ClCompile Include="src\Graphics\Sprite.cpp" />
-    <ClCompile Include="src\Graphics\Window.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="src\Managers\FileReader.cpp" />
-    <ClCompile Include="src\Managers\FontManager.cpp" />
-    <ClCompile Include="src\Managers\Input.cpp" />
-    <ClCompile Include="src\Managers\PicoPNG.cpp" />
-    <ClCompile Include="src\Managers\SoundManager.cpp" />
-    <ClCompile Include="src\Managers\TextureManager.cpp" />
-    <ClCompile Include="src\Math\mat4.cpp" />
-    <ClCompile Include="src\Math\vec2.cpp" />
-    <ClCompile Include="src\Math\vec3.cpp" />
-    <ClCompile Include="src\Math\vec4.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Audio\Music.h" />
-    <ClInclude Include="src\Audio\Sound.h" />
-    <ClInclude Include="src\External\freetype-gl-old\freetype-gl.h" />
-    <ClInclude Include="src\External\freetype-gl-old\opengl.h" />
-    <ClInclude Include="src\External\freetype-gl-old\platform.h" />
-    <ClInclude Include="src\External\freetype-gl-old\texture-atlas.h" />
-    <ClInclude Include="src\External\freetype-gl-old\texture-font.h" />
-    <ClInclude Include="src\External\freetype-gl-old\vec234.h" />
-    <ClInclude Include="src\External\freetype-gl-old\vector.h" />
-    <ClInclude Include="src\Graphics\BatchRenderer2D.h" />
-    <ClInclude Include="src\Graphics\Camera.h" />
-    <ClInclude Include="src\Graphics\Font.h" />
-    <ClInclude Include="src\Ao.h" />
-    <ClInclude Include="src\Graphics\FontFactory.h" />
-    <ClInclude Include="src\Graphics\Group.h" />
-    <ClInclude Include="src\Graphics\Renderable2D.h" />
-    <ClInclude Include="src\Graphics\Renderer2D.h" />
-    <ClInclude Include="src\Graphics\Shader.h" />
-    <ClInclude Include="src\Graphics\ShaderFactory.h" />
-    <ClInclude Include="src\Graphics\Sprite.h" />
-    <ClInclude Include="src\Graphics\Texture.h" />
-    <ClInclude Include="src\Graphics\Window.h" />
-    <ClInclude Include="src\Managers\AoManagers.h" />
-    <ClInclude Include="src\Managers\FileReader.h" />
-    <ClInclude Include="src\Managers\FontManager.h" />
-    <ClInclude Include="src\Managers\Input.h" />
-    <ClInclude Include="src\Managers\PicoPNG.h" />
-    <ClInclude Include="src\Managers\SoundManager.h" />
-    <ClInclude Include="src\Managers\TextureManager.h" />
-    <ClInclude Include="src\Managers\Timer.h" />
-    <ClInclude Include="src\Math\AoMath.h" />
-    <ClInclude Include="src\Math\mat4.h" />
-    <ClInclude Include="src\Math\MathUtils.h" />
-    <ClInclude Include="src\Math\vec2.h" />
-    <ClInclude Include="src\Math\vec3.h" />
-    <ClInclude Include="src\Math\vec4.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

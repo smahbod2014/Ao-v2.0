@@ -15,195 +15,192 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Graphics\Window.cpp">
+    <ClCompile Include="Ao\Audio\Music.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Managers\FileReader.cpp">
+    <ClCompile Include="Ao\Audio\Sound.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Managers\FontManager.cpp">
+    <ClCompile Include="Ao\External\freetype-gl-old\platform.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Managers\Input.cpp">
+    <ClCompile Include="Ao\External\freetype-gl-old\texture-atlas.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Managers\PicoPNG.cpp">
+    <ClCompile Include="Ao\External\freetype-gl-old\texture-font.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Managers\SoundManager.cpp">
+    <ClCompile Include="Ao\External\freetype-gl-old\vector.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Managers\TextureManager.cpp">
+    <ClCompile Include="Ao\Graphics\BatchRenderer2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="Ao\Graphics\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\Font.cpp">
+    <ClCompile Include="Ao\Graphics\Font.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Audio\Music.cpp">
+    <ClCompile Include="Ao\Graphics\Group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Audio\Sound.cpp">
+    <ClCompile Include="Ao\Graphics\Renderable2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Math\mat4.cpp">
+    <ClCompile Include="Ao\Graphics\Renderer2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Math\vec2.cpp">
+    <ClCompile Include="Ao\Graphics\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Math\vec3.cpp">
+    <ClCompile Include="Ao\Graphics\ShaderFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Math\vec4.cpp">
+    <ClCompile Include="Ao\Graphics\Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\Shader.cpp">
+    <ClCompile Include="Ao\Graphics\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\BatchRenderer2D.cpp">
+    <ClCompile Include="Ao\Managers\FileReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\Renderable2D.cpp">
+    <ClCompile Include="Ao\Managers\FontManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\Renderer2D.cpp">
+    <ClCompile Include="Ao\Managers\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\Sprite.cpp">
+    <ClCompile Include="Ao\Managers\PicoPNG.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\ShaderFactory.cpp">
+    <ClCompile Include="Ao\Managers\SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\Camera.cpp">
+    <ClCompile Include="Ao\Managers\TextureManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\Group.cpp">
+    <ClCompile Include="Ao\Math\mat4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\External\freetype-gl-old\platform.c">
+    <ClCompile Include="Ao\Math\vec2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\External\freetype-gl-old\texture-atlas.c">
+    <ClCompile Include="Ao\Math\vec3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\External\freetype-gl-old\texture-font.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\External\freetype-gl-old\vector.c">
+    <ClCompile Include="Ao\Math\vec4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Graphics\Window.h">
+    <ClInclude Include="Ao\Audio\Music.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Managers\FileReader.h">
+    <ClInclude Include="Ao\Audio\Sound.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Managers\FontManager.h">
+    <ClInclude Include="Ao\External\freetype-gl-old\freetype-gl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Managers\Input.h">
+    <ClInclude Include="Ao\External\freetype-gl-old\opengl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Managers\PicoPNG.h">
+    <ClInclude Include="Ao\External\freetype-gl-old\platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Managers\SoundManager.h">
+    <ClInclude Include="Ao\External\freetype-gl-old\texture-atlas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Managers\TextureManager.h">
+    <ClInclude Include="Ao\External\freetype-gl-old\texture-font.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Managers\Timer.h">
+    <ClInclude Include="Ao\External\freetype-gl-old\vec234.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ao.h">
+    <ClInclude Include="Ao\External\freetype-gl-old\vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\Font.h">
+    <ClInclude Include="Ao\Graphics\BatchRenderer2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\Texture.h">
+    <ClInclude Include="Ao\Graphics\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Audio\Music.h">
+    <ClInclude Include="Ao\Graphics\Font.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Audio\Sound.h">
+    <ClInclude Include="Ao\Graphics\FontFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Math\AoMath.h">
+    <ClInclude Include="Ao\Graphics\Group.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Math\mat4.h">
+    <ClInclude Include="Ao\Graphics\Renderable2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Math\MathUtils.h">
+    <ClInclude Include="Ao\Graphics\Renderer2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Math\vec2.h">
+    <ClInclude Include="Ao\Graphics\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Math\vec3.h">
+    <ClInclude Include="Ao\Graphics\ShaderFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Math\vec4.h">
+    <ClInclude Include="Ao\Graphics\Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Managers\AoManagers.h">
+    <ClInclude Include="Ao\Graphics\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\Shader.h">
+    <ClInclude Include="Ao\Graphics\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\BatchRenderer2D.h">
+    <ClInclude Include="Ao\Managers\AoManagers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\Renderable2D.h">
+    <ClInclude Include="Ao\Managers\FileReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\Renderer2D.h">
+    <ClInclude Include="Ao\Managers\FontManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\Sprite.h">
+    <ClInclude Include="Ao\Managers\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\ShaderFactory.h">
+    <ClInclude Include="Ao\Managers\PicoPNG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\Camera.h">
+    <ClInclude Include="Ao\Managers\SoundManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\FontFactory.h">
+    <ClInclude Include="Ao\Managers\TextureManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graphics\Group.h">
+    <ClInclude Include="Ao\Managers\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\External\freetype-gl-old\freetype-gl.h">
+    <ClInclude Include="Ao\Math\AoMath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\External\freetype-gl-old\opengl.h">
+    <ClInclude Include="Ao\Math\mat4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\External\freetype-gl-old\platform.h">
+    <ClInclude Include="Ao\Math\MathUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\External\freetype-gl-old\texture-atlas.h">
+    <ClInclude Include="Ao\Math\vec2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\External\freetype-gl-old\texture-font.h">
+    <ClInclude Include="Ao\Math\vec3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\External\freetype-gl-old\vec234.h">
+    <ClInclude Include="Ao\Math\vec4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\External\freetype-gl-old\vector.h">
+    <ClInclude Include="Ao\Ao.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
