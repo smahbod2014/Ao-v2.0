@@ -154,7 +154,7 @@ public:
 		m_BatchRenderer->setProjectionMatrix(m_Camera->getCombinedMatrix());
 		m_BatchRenderer->begin();
 		m_Player->submit(m_BatchRenderer);
-		m_BatchRenderer->drawString("AVAW", ao::vec3(100, 100, 0), *ao::FontManager::get("magnetob"), 0xffffffff);
+		m_BatchRenderer->drawString("AVAW", ao::vec3(300, 300, 0), *ao::FontManager::get("magnetob"), 0xffffffff);
 		//m_Group->submit(m_BatchRenderer);
 		m_BatchRenderer->end();
 		/*glBegin(GL_QUADS);

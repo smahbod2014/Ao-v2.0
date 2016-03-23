@@ -67,8 +67,13 @@ texture_atlas_new( const size_t width,
     self->id = 0;
 
     vector_push_back( self->nodes, &node );
+#if 0
     self->data = (unsigned char *)
         calloc( width*height*depth, sizeof(unsigned char) );
+#else
+	self->data = (unsigned char *)
+		calloc(width*height*2, sizeof(unsigned char));
+#endif
 
     if( self->data == NULL)
     {
@@ -109,9 +114,10 @@ texture_atlas_set_region( texture_atlas_t * self,
                           const unsigned char * data,
                           const size_t stride )
 {
-    size_t i;
+    size_t i, j;
     size_t depth;
     size_t charsize;
+	unsigned char* dest;
 
     assert( self );
     assert( x > 0);
@@ -123,10 +129,20 @@ texture_atlas_set_region( texture_atlas_t * self,
 
     depth = self->depth;
     charsize = sizeof(char);
-    for( i=0; i<height; ++i )
-    {
+	for (i = 0; i < height; ++i)
+	{
+#if 0
         memcpy( self->data+((y+i)*self->width + x ) * charsize * depth,
                 data + (i*stride) * charsize, width * charsize * depth  );
+#else
+		dest = self->data + ((y + i)*self->width + x) * charsize * 2;
+		const unsigned char* src = data + (i*stride) * charsize;
+		for (j = 0; j < width; j++)
+		{
+			dest[j * 2 + 0] = 0xff;
+			dest[j * 2 + 1] = src[j];
+		}
+#endif
     }
 }
 
@@ -300,7 +316,11 @@ texture_atlas_clear( texture_atlas_t * self )
     node.z = self->width-2;
 
     vector_push_back( self->nodes, &node );
+#if 0
     memset( self->data, 0, self->width*self->height*self->depth );
+#else
+	memset(self->data, 0, self->width*self->height*2);
+#endif
 }
 
 
@@ -321,7 +341,12 @@ texture_atlas_upload( texture_atlas_t * self )
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-    if( self->depth == 4 )
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE_ALPHA, self->width, self->height,
+				 0, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, self->data);
+	
+#if 0
+    else if( self->depth == 4 )
     {
 #ifdef GL_UNSIGNED_INT_8_8_8_8_REV
         glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, self->width, self->height,
@@ -341,5 +366,6 @@ texture_atlas_upload( texture_atlas_t * self )
         glTexImage2D( GL_TEXTURE_2D, 0, GL_RED, self->width, self->height,
                       0, GL_RED, GL_UNSIGNED_BYTE, self->data );
     }
+#endif
 }
 

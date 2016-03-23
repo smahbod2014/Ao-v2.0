@@ -84,16 +84,16 @@
     <ClCompile Include="src\Graphics\Group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\freetype-gl-old\platform.c">
+    <ClCompile Include="src\External\freetype-gl-old\platform.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\freetype-gl-old\texture-atlas.c">
+    <ClCompile Include="src\External\freetype-gl-old\texture-atlas.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\freetype-gl-old\texture-font.c">
+    <ClCompile Include="src\External\freetype-gl-old\texture-font.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\freetype-gl-old\vector.c">
+    <ClCompile Include="src\External\freetype-gl-old\vector.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -185,25 +185,25 @@
     <ClInclude Include="src\Graphics\Group.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\freetype-gl-old\freetype-gl.h">
+    <ClInclude Include="src\External\freetype-gl-old\freetype-gl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\freetype-gl-old\opengl.h">
+    <ClInclude Include="src\External\freetype-gl-old\opengl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\freetype-gl-old\platform.h">
+    <ClInclude Include="src\External\freetype-gl-old\platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\freetype-gl-old\texture-atlas.h">
+    <ClInclude Include="src\External\freetype-gl-old\texture-atlas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\freetype-gl-old\texture-font.h">
+    <ClInclude Include="src\External\freetype-gl-old\texture-font.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\freetype-gl-old\vec234.h">
+    <ClInclude Include="src\External\freetype-gl-old\vec234.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\freetype-gl-old\vector.h">
+    <ClInclude Include="src\External\freetype-gl-old\vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

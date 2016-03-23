@@ -1,8 +1,7 @@
 #pragma once
 
 #include <string>
-//#include <freetype-gl/freetype-gl.h>
-#include "../freetype-gl-old/freetype-gl.h"
+#include "../External/freetype-gl-old/freetype-gl.h"
 #include "../Math/AoMath.h"
 
 namespace ao

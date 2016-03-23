@@ -41,10 +41,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(SolutionDir)\Dependencies\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\Dependencies\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir)\Dependencies\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\Dependencies\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -81,10 +83,10 @@
   <ItemGroup>
     <ClCompile Include="src\Audio\Music.cpp" />
     <ClCompile Include="src\Audio\Sound.cpp" />
-    <ClCompile Include="src\freetype-gl-old\platform.c" />
-    <ClCompile Include="src\freetype-gl-old\texture-atlas.c" />
-    <ClCompile Include="src\freetype-gl-old\texture-font.c" />
-    <ClCompile Include="src\freetype-gl-old\vector.c" />
+    <ClCompile Include="src\External\freetype-gl-old\platform.c" />
+    <ClCompile Include="src\External\freetype-gl-old\texture-atlas.c" />
+    <ClCompile Include="src\External\freetype-gl-old\texture-font.c" />
+    <ClCompile Include="src\External\freetype-gl-old\vector.c" />
     <ClCompile Include="src\Graphics\BatchRenderer2D.cpp" />
     <ClCompile Include="src\Graphics\Camera.cpp" />
     <ClCompile Include="src\Graphics\Font.cpp" />
@@ -110,13 +112,13 @@
   <ItemGroup>
     <ClInclude Include="src\Audio\Music.h" />
     <ClInclude Include="src\Audio\Sound.h" />
-    <ClInclude Include="src\freetype-gl-old\freetype-gl.h" />
-    <ClInclude Include="src\freetype-gl-old\opengl.h" />
-    <ClInclude Include="src\freetype-gl-old\platform.h" />
-    <ClInclude Include="src\freetype-gl-old\texture-atlas.h" />
-    <ClInclude Include="src\freetype-gl-old\texture-font.h" />
-    <ClInclude Include="src\freetype-gl-old\vec234.h" />
-    <ClInclude Include="src\freetype-gl-old\vector.h" />
+    <ClInclude Include="src\External\freetype-gl-old\freetype-gl.h" />
+    <ClInclude Include="src\External\freetype-gl-old\opengl.h" />
+    <ClInclude Include="src\External\freetype-gl-old\platform.h" />
+    <ClInclude Include="src\External\freetype-gl-old\texture-atlas.h" />
+    <ClInclude Include="src\External\freetype-gl-old\texture-font.h" />
+    <ClInclude Include="src\External\freetype-gl-old\vec234.h" />
+    <ClInclude Include="src\External\freetype-gl-old\vector.h" />
     <ClInclude Include="src\Graphics\BatchRenderer2D.h" />
     <ClInclude Include="src\Graphics\Camera.h" />
     <ClInclude Include="src\Graphics\Font.h" />

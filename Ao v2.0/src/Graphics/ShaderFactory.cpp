@@ -57,7 +57,7 @@ void main()
 
 	if (outSampler == 2.0)
 {
-	//textureColor.g = 1;
+	//textureColor.r = 0;
 }
 	
 	finalColor = textureColor;
