@@ -172,7 +172,7 @@ namespace ao
 									 const Font& font, unsigned int color)
 	{
 		float samplerIndex = findSamplerIndex(font.getID());
-		float x = position.x;
+		float x = 0;
 		const vec2& scale = font.getScale();
 		
 #if 1
@@ -189,7 +189,7 @@ namespace ao
 				}
 
 				float x0 = x + glyph->offset_x / scale.x;
-				float y0 = position.y + glyph->offset_y / scale.y;
+				float y0 = 0 + glyph->offset_y / scale.y;
 				float x1 = x0 + glyph->width / scale.x;
 				float y1 = y0 - glyph->height / scale.y;
 

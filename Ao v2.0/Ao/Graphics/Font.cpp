@@ -13,6 +13,8 @@ namespace ao
 			std::cout << "Failed to load font" << std::endl;
 		m_Size = size;
 		m_Scale = vec2(1.0f, 1.0f);
+
+		initializeGlyphs();
 	}
 
 	Font::Font(const char* source, float size, size_t bytes)
@@ -23,26 +25,10 @@ namespace ao
 			std::cout << "Failed to load font" << std::endl;
 		m_Size = size;
 		m_Scale = vec2(1.0f, 1.0f);
-		/*std::cout << "Font id: " << m_Atlas->id << std::endl;
-		const char A = 'A', B = 'B', C = 'C';
-#if 1
-		if (ftgl::texture_font_get_glyph(m_Font, A))
-			std::cout << "Has A" << std::endl;
-		if (ftgl::texture_font_get_glyph(m_Font, B))
-			std::cout << "Has B" << std::endl;
-		if (ftgl::texture_font_get_glyph(m_Font, C))
-			std::cout << "Has C" << std::endl;
-#else
-		for (int i = 0; i < 3; i++)
-		{
-			const char c = 'A' + i;
-			std::cout << c << std::endl;
-			if (!ftgl::texture_font_get_glyph(m_Font, &c))
-				std::cout << "something went wrong" << std::endl;
-		}
-#endif
+		
+		initializeGlyphs();
 
-		std::cout << m_Font->glyphs->size << std::endl;*/
+		//std::cout << m_Font->glyphs->size << std::endl;
 
 	}
 
@@ -58,5 +44,34 @@ namespace ao
 	{
 		m_Scale.x = x;
 		m_Scale.y = y;
+	}
+
+	void Font::initializeGlyphs()
+	{
+		for (int i = 32; i <= 126; i++)
+		{
+			char c = (char)i;
+			ftgl::texture_glyph_t* glyph = ftgl::texture_font_get_glyph(m_Font, c);
+			if (glyph)
+			{
+				m_GlyphBounds[c] = glyph;
+			}
+			else
+				std::cout << "No glyph exists for " << c << std::endl;
+		}
+	}
+
+	vec2 Font::getBounds(const std::string& text)
+	{
+		vec2 textBounds;
+		for (size_t i = 0; i < text.length(); i++)
+		{
+			ftgl::texture_glyph_t* glyph = m_GlyphBounds[text[i]];
+			textBounds.x += glyph->width;
+			textBounds.y = fmaxf(textBounds.y, glyph->height);
+			if (i > 0)
+				textBounds.x -= ftgl::texture_glyph_get_kerning(glyph, text[i - 1]);
+		}
+		return textBounds;
 	}
 }

@@ -64,8 +64,47 @@ void main()
 }
 )";
 
+	const char* ShaderFactory::s_DefaultShapeShaderVert = R"(
+#version 330 core
+
+layout (location = 0) in vec3 inWorldPosition;
+layout (location = 1) in vec4 inColor;
+
+uniform mat4 projMatrix;
+//uniform mat4 viewMatrix; //coming soon!
+
+out vec4 outColor;
+ 
+void main()
+{
+	//todo: add view matrix
+	gl_Position = projMatrix * vec4(inWorldPosition, 1.0);
+	
+	outColor = inColor;
+}
+)";
+
+	const char* ShaderFactory::s_DefaultShapeShaderFrag = R"(
+#version 330 core
+
+in vec4 outColor;
+
+out vec4 finalColor;
+
+void main()
+{
+	finalColor = outColor;
+	//finalColor = vec4(1, 1, 1, 1);
+}
+)";
+
 	Shader* ShaderFactory::DefaultShader()
 	{
 		return new Shader(s_DefaultShaderVert, s_DefaultShaderFrag, false);
+	}
+
+	Shader* ShaderFactory::DefaultShapeShader()
+	{
+		return new Shader(s_DefaultShapeShaderVert, s_DefaultShapeShaderFrag, false);
 	}
 }

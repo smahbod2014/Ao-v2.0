@@ -12,11 +12,6 @@
 #define BUFFER_SIZE sizeof(VertexData) * 4 * MAX_SPRITES
 #define INDICES_SIZE MAX_SPRITES * 6
 
-#define VERTEX_INDEX 0
-#define UV_INDEX 1
-#define SAMPLER_INDEX 2
-#define COLOR_INDEX 3
-
 namespace ao
 {
 	class vec3;
@@ -50,5 +45,10 @@ namespace ao
 		std::vector<GLuint> m_Textures;
 		Shader* m_Shader;
 		mat4 m_ProjectionMatrix;
+
+		const int VERTEX_INDEX = 0;
+		const int UV_INDEX = 1;
+		const int SAMPLER_INDEX = 2;
+		const int COLOR_INDEX = 3;
 	};
 }

@@ -62,7 +62,7 @@ namespace ao
 		}
 
 		m_Cache["magnetob"] = new Font(buff1, 35.0f, 65284);
-		//m_Cache["arial"] = new Font(buff2, 35.0f, 773852);
+		m_Cache["arial"] = new Font(buff2, 35.0f, 773852);
 
 		std::cout << "Instantiated default fonts" << std::endl;
 	}

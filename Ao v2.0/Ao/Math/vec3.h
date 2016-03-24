@@ -26,6 +26,7 @@ namespace ao
 		void operator-=(float b);
 		void operator*=(float b);
 		void operator/=(float b);
+		static vec3 lerp(const vec3& v0, const vec3& v1, float t);
 	public:
 		float x, y, z;
 	};

@@ -106,4 +106,9 @@ namespace ao
 		y /= b;
 		z /= b;
 	}
+
+	vec3 vec3::lerp(const vec3& v0, const vec3& v1, float t)
+	{
+		return v0 * (1 - t) + v1 * t;
+	}
 }

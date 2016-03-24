@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <map>
 #include "../External/freetype-gl-old/freetype-gl.h"
 #include "../Math/AoMath.h"
 
@@ -20,8 +21,12 @@ namespace ao
 		const GLuint getID() const { return m_Atlas->id; }
 		const float getSize() const { return m_Size; }
 		const vec2& getScale() const { return m_Scale; }
+		vec2 getBounds(const std::string& text);
+	private:
+		void initializeGlyphs();
 
 	private:
+		std::map<char, ftgl::texture_glyph_t*> m_GlyphBounds;
 		ftgl::texture_atlas_t* m_Atlas;
 		ftgl::texture_font_t* m_Font;
 		float m_Size;

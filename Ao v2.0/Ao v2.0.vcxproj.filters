@@ -93,6 +93,15 @@
     <ClCompile Include="Ao\Math\vec4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Ao\Graphics\Label.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ao\Graphics\Color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ao\Graphics\ShapeRenderer2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ao\Audio\Music.h">
@@ -201,6 +210,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Ao\Ao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ao\Graphics\Label.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ao\Graphics\Color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ao\Graphics\ShapeRenderer2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
