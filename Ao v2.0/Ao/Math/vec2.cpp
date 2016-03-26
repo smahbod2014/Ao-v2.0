@@ -120,4 +120,37 @@ namespace ao
 	{
 		return interpFunc(1 - t) * v0 + interpFunc(t) * v1;
 	}
+
+	float vec2::length()
+	{
+		return sqrtf(x * x + y * y);
+	}
+
+	float vec2::length2()
+	{
+		return x * x + y * y;
+	}
+
+	vec2 vec2::normalized()
+	{
+		return *this / length();
+	}
+
+	void vec2::set(float x, float y)
+	{
+		this->x = x;
+		this->y = y;
+	}
+
+	void vec2::set(const vec2& v)
+	{
+		set(v.x, v.y);
+	}
+
+	void vec2::setPolar(float degrees, float radius)
+	{
+		float radians = toRadians(degrees);
+		x = cosf(radians) * radius;
+		y = sinf(radians) * radius;
+	}
 }

@@ -116,5 +116,8 @@ namespace ao
 		m_KeyCodes[KeyCode::KEY_RIGHT] = SDLK_RIGHT;
 		m_KeyCodes[KeyCode::KEY_DOWN] = SDLK_DOWN;
 		m_KeyCodes[KeyCode::KEY_UP] = SDLK_UP;
+		m_KeyCodes[KeyCode::MOUSE_LEFT] = 1;
+		m_KeyCodes[KeyCode::MOUSE_MIDDLE] = 2;
+		m_KeyCodes[KeyCode::MOUSE_RIGHT] = 3;
 	}
 }

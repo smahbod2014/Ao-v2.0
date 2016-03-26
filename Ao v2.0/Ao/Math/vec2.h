@@ -27,6 +27,12 @@ namespace ao
 		void operator-=(float b);
 		void operator*=(float b);
 		void operator/=(float b);
+		float length();
+		float length2();
+		vec2 normalized();
+		void set(float x, float y);
+		void set(const vec2& v);
+		void setPolar(float degrees, float radius);
 		static vec2 lerp(const vec2& v0, const vec2& v1, float t);
 		static vec2 cubicInterpolate(const vec2& v0, const vec2& v1, float t);
 		static vec2 genericInterpolate(const vec2& v0, const vec2& v1, float t, std::function<float(float)> interpFunc);

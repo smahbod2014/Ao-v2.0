@@ -54,6 +54,7 @@ public:
 
 	void input(float dt) override
 	{
+
 		float speed = 100;
 		if (ao::Input::isKeyDown(AO_KEY_LEFT))
 		{

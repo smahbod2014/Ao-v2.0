@@ -13,5 +13,8 @@ namespace ao
 		static const unsigned int PURPLE = 0xffff00ff;
 		static const unsigned int YELLOW = 0xff00ffff;
 		static const unsigned int CYAN = 0xffffff00;
+		static const unsigned int WHITE = 0xffffffff;
+		static const unsigned int BLACK = 0xff000000;
+		static const unsigned int GRAY = 0xff7f7f7f;
 	};
 }

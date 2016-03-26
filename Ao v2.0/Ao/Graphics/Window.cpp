@@ -31,8 +31,8 @@ namespace ao
 
 		SDL_GL_SetSwapInterval(1);
 
-		s_Width = width;
-		s_Height = height;
+		s_Width = (float)width;
+		s_Height = (float)height;
 	}
 
 	Window::~Window()
@@ -62,6 +62,12 @@ namespace ao
 				break;
 			case SDL_KEYUP:
 				Input::releaseKey(event.key.keysym.sym);
+				break;
+			case SDL_MOUSEBUTTONDOWN:
+				Input::pressKey(event.button.button);
+				break;
+			case SDL_MOUSEBUTTONUP:
+				Input::releaseKey(event.button.button);
 				break;
 			}
 		}

@@ -156,6 +156,11 @@ namespace ao
 		}
 	}
 
+	void ShapeRenderer2D::drawLine(const vec2& v0, const vec2& v1, unsigned int color)
+	{
+		drawLine(v0.x, v0.y, v1.x, v1.y, color);
+	}
+
 	void ShapeRenderer2D::drawRect(float x, float y, float width, float height, unsigned int color)
 	{
 		m_Buffer->position = vec3(x, y, 0);
