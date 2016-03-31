@@ -16,7 +16,7 @@ namespace ao
 			std::cout << "[SoundManager]: " << std::string(Mix_GetError()) << std::endl;
 		}
 
-		if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY*2, MIX_DEFAULT_FORMAT, 2, 1024) == -1)
+		if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY * 2, MIX_DEFAULT_FORMAT, 4, 1024) == -1)
 		{
 			std::cout << "[SoundManager]: " << std::string(Mix_GetError()) << std::endl;
 		}

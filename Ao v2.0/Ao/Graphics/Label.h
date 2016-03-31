@@ -17,6 +17,7 @@ namespace ao
 
 		virtual void submit(Renderer2D* renderer) override;
 
+		void setText(const std::string& text) { m_Text = text; }
 		vec2 getBounds();
 	private:
 		std::string m_Text;

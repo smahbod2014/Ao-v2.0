@@ -32,7 +32,9 @@ namespace ao
 		vec2 normalized();
 		void set(float x, float y);
 		void set(const vec2& v);
-		void setPolar(float degrees, float radius);
+		void setPolar(float degrees, float radius, bool isDegrees = true);
+		static vec2 polar(float degrees, float radius, bool isDegrees = true);
+		static float distance(const vec2& a, const vec2& b);
 		static vec2 lerp(const vec2& v0, const vec2& v1, float t);
 		static vec2 cubicInterpolate(const vec2& v0, const vec2& v1, float t);
 		static vec2 genericInterpolate(const vec2& v0, const vec2& v1, float t, std::function<float(float)> interpFunc);

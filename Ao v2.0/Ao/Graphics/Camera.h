@@ -12,6 +12,7 @@ namespace ao
 
 		void translate(float x, float y);
 		void translate(const vec2& amount);
+		void rotate(const vec3& axis, float degrees);
 		void setZoom(float amount);
 		void update();
 
@@ -21,6 +22,7 @@ namespace ao
 
 	private:
 		float m_Width, m_Height;
+		vec2 m_Position;
 		mat4 m_Projection;
 		mat4 m_View;
 		mat4 m_InverseView;

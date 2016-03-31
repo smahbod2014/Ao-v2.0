@@ -207,6 +207,13 @@ namespace ao
 		}
 	}
 
+	void ShapeRenderer2D::drawPolygon(const std::vector<vec2>& vertices, unsigned int color)
+	{
+		if (m_ShapeType == ShapeType::Line)
+			for (int i = 0; i < vertices.size(); i++)
+				drawLine(vertices[i], vertices[(i + 1) % vertices.size()], color);
+	}
+
 	void ShapeRenderer2D::end()
 	{
 		glUnmapBuffer(GL_ARRAY_BUFFER);

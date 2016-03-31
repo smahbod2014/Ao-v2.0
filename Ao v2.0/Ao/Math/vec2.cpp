@@ -147,10 +147,23 @@ namespace ao
 		set(v.x, v.y);
 	}
 
-	void vec2::setPolar(float degrees, float radius)
+	void vec2::setPolar(float degrees, float radius, bool isDegrees /* = true*/)
 	{
-		float radians = toRadians(degrees);
-		x = cosf(radians) * radius;
-		y = sinf(radians) * radius;
+		if (isDegrees)
+			degrees = toRadians(degrees);
+		x = cosf(degrees) * radius;
+		y = sinf(degrees) * radius;
+	}
+
+	vec2 vec2::polar(float degrees, float radius, bool isDegrees /* = true*/)
+	{
+		vec2 result;
+		result.setPolar(degrees, radius, isDegrees);
+		return result;
+	}
+
+	float vec2::distance(const vec2& a, const vec2& b)
+	{
+		return (a - b).length();
 	}
 }

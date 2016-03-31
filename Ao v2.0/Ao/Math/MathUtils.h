@@ -90,6 +90,7 @@ namespace ao
 			return c;
 		}
 
+		//determines whether shape1 is inside of shape2. Order matters.
 		static bool shapesIntersect(const vec2* shape1, int numVertices1, const vec2* shape2, int numVertices2)
 		{
 			for (int i = 0; i < numVertices1; i++)
@@ -98,6 +99,11 @@ namespace ao
 					return true;
 			}
 			return false;
+		}
+
+		static bool pointInsideCircle(const vec2& circlePos, float circleRadius, const vec2& point)
+		{
+			return vec2::distance(circlePos, point) <= circleRadius;
 		}
 	};
 }

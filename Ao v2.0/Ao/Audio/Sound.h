@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <SDL/SDL_mixer.h>
 
 namespace ao
 {
@@ -16,6 +17,6 @@ namespace ao
 		void pause() {}
 		void resume() {}
 	private:
-		/*Mix_Chunk* m_Sound = nullptr;*/
+		Mix_Chunk* m_Sound = nullptr;
 	};
 }

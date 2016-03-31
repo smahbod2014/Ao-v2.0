@@ -54,11 +54,6 @@ void main()
 		int samplerIndex = int(outSampler - 0.5);
 		textureColor = outColor * texture(textures[samplerIndex], outTexCoord);
 	}
-
-	if (outSampler == 2.0)
-{
-	//textureColor.r = 0;
-}
 	
 	finalColor = textureColor;
 }
@@ -94,7 +89,6 @@ out vec4 finalColor;
 void main()
 {
 	finalColor = outColor;
-	//finalColor = vec4(1, 1, 1, 1);
 }
 )";
 

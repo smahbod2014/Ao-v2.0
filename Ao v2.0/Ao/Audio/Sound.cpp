@@ -1,11 +1,8 @@
 #include "Sound.h"
-#include <SDL/SDL_mixer.h>
 #include <iostream>
 
 namespace ao
 {
-	Mix_Chunk* m_Sound = nullptr;
-
 	Sound::Sound(const std::string& filepath, float volume /* = 1.0f */)
 	{
 		m_Sound = Mix_LoadWAV(filepath.c_str());
@@ -18,6 +15,7 @@ namespace ao
 
 		if (m_Sound)
 		{
+			std::cout << "[Sound]: Loaded " + filepath << std::endl;
 			Mix_VolumeChunk(m_Sound, (int)(volume * MIX_MAX_VOLUME));
 		}
 	}

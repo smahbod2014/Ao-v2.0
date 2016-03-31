@@ -27,6 +27,7 @@ namespace ao
 		void drawLine(float x0, float y0, float x1, float y1, unsigned int color);
 		void drawLine(const vec2& v0, const vec2& v1, unsigned int color);
 		void drawRect(float x, float y, float width, float height, unsigned int color);
+		void drawPolygon(const std::vector<vec2>& vertices, unsigned int color);
 		void end();
 		void flush();
 	private:
